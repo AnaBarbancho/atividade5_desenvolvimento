@@ -1,7 +1,7 @@
 export interface LoteriaProps {
-    lotofacil: Props;
     megasena: Props;
-    timemania: TimeProps;
+    quina:Props;
+    timemania:Props;
 }
 
 export interface Props {
@@ -17,20 +17,4 @@ export interface Props {
     tipoJogo: string;
     valorEstimadoProximoConcurso: number;
     valorPremio: number;
-  }
-
-  export interface TimeProps{
-    timeDoCoracao:string,
-    acumulado: boolean,
-    concursoEspecial: boolean,
-    dataApuracao: string,
-    dataPorExtenso: string,
-    dataProximoConcurso: string,
-    dezenas: string[],
-    numeroDoConcurso: number,
-    quantidadeGanhadores: number,
-    tipoPublicacao: number,
-    tipoJogo: string,
-    valorEstimadoProximoConcurso: number,
-    valorPremio: number
   }

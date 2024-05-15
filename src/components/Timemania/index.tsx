@@ -1,23 +1,22 @@
-import "./index.css";
-import trevo from "../../assets/trevo-megasena.png";
-import { useLoteria } from "../../hooks";
+import "../Timemania/index.css";
+import trevo from "../../assets/trevo-quina.png";
+import {useLoteria} from "../../hooks";
 
 export default function Timemania(){
     const { timemania } = useLoteria();
-    
     return (
-        <div className="mega-bloco-principal">
+        <div className="timemania-bloco-principal">
             <div>
-                <div className="mega-bloco-loteria">
+                <div className="timemania-bloco-loteria">
                     <img src={trevo} alt="" />
-                    <span className="mega-nome-loteria">TIMEMANIA</span>
+                    <span className="timemania-nome-loteria">TIMEMANIA</span>
                 </div>
-                <div className="mega-bloco-estimativa">
-                    <div className="mega-texto-estimativa"> 
+                <div className="timemania-bloco-estimativa">
+                    <div className="timemania-texto-estimativa"> 
                         Estimativa de prêmio do próximo concurso. 
                         Sorteio em {timemania.dataProximoConcurso}:
                     </div>
-                    <div className="mega-valor-estimativa"> 
+                    <div className="timemania-valor-estimativa"> 
                         {timemania.valorEstimadoProximoConcurso.toLocaleString("pt-Br",{
                             style: "currency",
                             currency: "BRL"
@@ -25,24 +24,24 @@ export default function Timemania(){
                     </div>
                 </div>
             </div>
-            <div className="mega-bloco-direita">
-                <div className="mega-linha-bola">
+            <div className="timemania-bloco-direita">
+                <div className="timemania-linha-bola">
                     {
                         timemania.dezenas.map( dezena =>
-                                <div className="mega-bola" key={dezena}>{dezena}</div>
+                                <div className="timemania-bola" key={dezena}>{dezena}</div>
                              )
                     }
                 </div>
-                <div className="mega-texto-acumulou">
+                <div className="timemania-texto-acumulou">
                     {
                         timemania.quantidadeGanhadores === 0 ? 
                         "ACUMULOU!" :
                         `${timemania.quantidadeGanhadores} GANHADORES`
                     }
                 </div>
-                <div className="mega-data-concurso">
+                <div className="timemania-data-concurso">
                     {
-                        `Concurso ${timemania.numeroDoConcurso} - ${megasena.dataPorExtenso}`
+                        `Concurso ${timemania.numeroDoConcurso} - ${timemania.dataPorExtenso}`
                     }
                 </div>
             </div>
