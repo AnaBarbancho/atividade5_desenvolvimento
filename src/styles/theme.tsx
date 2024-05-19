@@ -1,4 +1,4 @@
-const mega = {
+ const mega = {
     acumulou: "#0066b3",
     data: "#4c556c",
     estimativa: "#209869",
@@ -7,7 +7,7 @@ const mega = {
     bolafonte: "#fff"
 };
     
-const quina = {
+ const quina = {
     acumulou: "#0066b3",
     data: "#4c556c",
     estimativa: "#260085",
