@@ -1,4 +1,4 @@
- const mega = {
+ const mega2 = {
     acumulou: "#0066b3",
     data: "#4c556c",
     estimativa: "#209869",
@@ -7,7 +7,7 @@
     bolafonte: "#fff"
 };
     
- const quina = {
+ const quina2 = {
     acumulou: "#0066b3",
     data: "#4c556c",
     estimativa: "#260085",
@@ -15,7 +15,7 @@
     bola: "#260085",
     bolafonte: "#fff"
 }
-const timemania = {
+const timemania2 = {
     acumulou: "#0066b3",
     data: "#4c556c",
     estimativa: "#00ff48",
@@ -23,4 +23,4 @@ const timemania = {
     bola: "#FFF600",
     bolafonte: "#049645"
 };
-export{timemania,mega,quina};
+export{timemania2,mega2,quina2};

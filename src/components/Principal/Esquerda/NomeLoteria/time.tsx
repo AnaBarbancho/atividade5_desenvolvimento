@@ -1,15 +1,15 @@
-import trevo from "../../../../assets/trevo-lotofacil.png";
-import { useLoteria } from "../../../../hooks";
+import time from "../../../../assets/time.png";
 import styled from "styled-components";
+import { timemania2 } from "../../../../styles/theme";
+
 
 export default function TimeNome() {
-    const { timemania } = useLoteria();
     return (
-        <SldNome>
+        <SldNome colors={timemania2}>
         <div className="timemania-bloco-principal">
             <div>
                 <div className="timemania-bloco-loteria">
-                    <img src={trevo} alt="" />
+                    <img src={time} alt="" />
                     <span className="timemania-nome-loteria">TIMEMANIA</span>
                 </div>
             </div>
@@ -17,21 +17,17 @@ export default function TimeNome() {
         </SldNome>
     );
 };
-const SldNome = styled.div`
-.timemania-bloco-principal {
+const SldNome = styled.div<{ colors: typeof timemania2 }>`
+  .timemania-bloco-loteria {
     display: flex;
-    padding: 30px 0px;
-    border-bottom: 1px solid #ddd;
-}
+  }
 
-.timemania-bloco-loteria {
-    display: flex;
-}
-
-.timemania-nome-loteria {
+  .timemania-nome-loteria {
     font-size: 28px;
     font-weight: bold;
-    color: #260085;
+    color: ${({ colors }) => colors.loteria};
     margin-left: 10px;
-}
+  }
 `;
+
+

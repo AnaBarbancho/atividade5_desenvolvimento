@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useLoteria } from "../../../../hooks";
+import { timemania2 } from "../../../../styles/theme";
 
 export default function TimeEstimativa() {
     const { timemania } = useLoteria();
     return (
-        <SldEstimativa>
+        <SldEstimativa colors={timemania2}>
             <div className="timemania-bloco-estimativa">
                 <div className="timemania-texto-estimativa">
                     Estimativa de prêmio do próximo concurso.
@@ -20,22 +21,22 @@ export default function TimeEstimativa() {
         </SldEstimativa>
     );
 };
-const SldEstimativa = styled.div`
-.timemania-bloco-estimativa {
+const SldEstimativa = styled.div<{ colors: typeof timemania2 }>`
+  .timemania-bloco-estimativa {
     width: 240px;
     margin-left: 45px;
     margin-top: 15px;
-}
+  }
 
-.timemania-texto-estimativa {
+  .timemania-texto-estimativa {
     font-size: 15px;
-    color: #4c556c;
-}
+    color: ${({ colors }) => colors.data};
+  }
 
-.timemania-valor-estimativa {
+  .timemania-valor-estimativa {
     font-size: 20px;
     margin-top: 15px;
     font-weight: bold;
-    color: #260085;
-}
+    color: ${({ colors }) => colors.estimativa};
+  }
 `;

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { useLoteria } from "../../../../hooks";
+import { mega2 } from "../../../../styles/theme";
 
 export default function MegasenaEstimativa() {
     const { megasena } = useLoteria();
 
     return (
-        <SldEst>
+        <SldEst  colors={mega2}>
         <div className="mega-bloco-estimativa">
             <div className="mega-texto-estimativa">
                 Estimativa de prêmio do próximo concurso.
@@ -21,7 +22,7 @@ export default function MegasenaEstimativa() {
         </SldEst>
     );
 };
-const SldEst = styled.div`
+const SldEst = styled.div<{ colors: typeof mega2 }>`
 .mega-bloco-estimativa {
     width: 240px;
     margin-left: 45px;
@@ -30,13 +31,14 @@ const SldEst = styled.div`
 
 .mega-texto-estimativa {
     font-size: 15px;
+    color:${({ colors }) => colors.data}
 }
 
 .mega-valor-estimativa {
     font-size: 20px;
     margin-top: 15px;
     font-weight: bold;
-    color: #209869;
+    color:  ${({ colors }) => colors.estimativa};
 }
 
 `;

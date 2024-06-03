@@ -1,10 +1,11 @@
 import { useLoteria } from "../../../../hooks";
 import styled from "styled-components";
+import { quina2 } from "../../../../styles/theme";
 
 export default function QuinaAcumulou() {
     const { quina } = useLoteria();
     return (
-        <SldAcumulou>
+        <SldAcumulou colors = {quina2}>
         <div className="quina-texto-acumulou">
             {
                 quina.quantidadeGanhadores === 0 ?
@@ -15,12 +16,12 @@ export default function QuinaAcumulou() {
         </SldAcumulou>
     );
 };
-const SldAcumulou= styled.div`
+const SldAcumulou= styled.div<{ colors: typeof quina2 }>`
 .quina-texto-acumulou {
     font-size: 28px;
     font-weight: bold;
-    color: #0066b3;
-    margin-top: 15px;
-    padding-left: 15px;
+    color: ${({ colors }) => colors.acumulou};
+    padding-top: 30px;
+    padding-left: 60px;
 }
 `;

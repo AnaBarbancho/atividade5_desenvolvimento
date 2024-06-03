@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Megasena from "../components/abc/mega";
+import Megasena from "../components/Principal/mega";
 import Menu from "../components/Menu";
-import Quina from "../components/abc/quina";
-import Timemania from "../components/abc/time";
+import Quina from "../components/Principal/quina";
+import Timemania from "../components/Principal/time";
 
 export default function Rotas(){
     return (

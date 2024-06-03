@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import trevo from "../../../../assets/trevo-megasena.png";
+import { mega2 } from "../../../../styles/theme";
 
 export default function MegasenaHeader() {
     return (
-        <SldNome>
+        <SldNome colors={mega2}>
         <div className="mega-bloco-principal">
             <div>
                 <div className="mega-bloco-loteria">
@@ -15,12 +16,7 @@ export default function MegasenaHeader() {
         </SldNome>
     );
 }
-const SldNome = styled.div`
-.mega-bloco-principal {
-    display: flex;
-    padding: 30px 0px;
-    border-bottom: 1px solid #ddd;
-}
+const SldNome = styled.div<{ colors: typeof mega2 }>`
 
 .mega-bloco-loteria {
     display: flex;
@@ -29,6 +25,6 @@ const SldNome = styled.div`
 .mega-nome-loteria {
     font-size: 28px;
     font-weight: bold;
-    color: #209869;
+    color:${({ colors }) => colors.loteria};
     margin-left: 10px;
 }`;

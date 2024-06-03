@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { useLoteria } from "../../../../hooks";
+import { mega2 } from "../../../../styles/theme";
 
 export default function MegasenaAcumulou() {
     const { megasena } = useLoteria();
 
     return (
-        <Sld>
+        <Sld colors = {mega2}>
             <div className="mega-texto-acumulou">
                 {
                     megasena.quantidadeGanhadores === 0 ?
@@ -16,11 +17,11 @@ export default function MegasenaAcumulou() {
         </Sld>
     );
 };
-export const Sld = styled.div`
+export const Sld = styled.div<{ colors: typeof mega2 }>`
 .mega-texto-acumulou {
     font-size: 28px;
     font-weight: bold;
-    color: #0066b3;
+    color: ${({ colors }) => colors.acumulou};
     margin-top: 15px;
     padding-left: 15px;
 }`;

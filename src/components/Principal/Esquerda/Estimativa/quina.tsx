@@ -1,10 +1,11 @@
 import { useLoteria } from "../../../../hooks";
 import styled from "styled-components";
+import { quina2 } from "../../../../styles/theme";
 
 export default function QuinaEstimativa() {
     const { quina } = useLoteria();
     return (
-        <SldEstimativa>
+        <SldEstimativa colors={quina2}>
         <div className="quina-bloco-estimativa">
             <div className="quina-texto-estimativa">
                 Estimativa de prêmio do próximo concurso.
@@ -20,22 +21,22 @@ export default function QuinaEstimativa() {
         </SldEstimativa>
     );
 };
-const SldEstimativa = styled.div`
+const SldEstimativa = styled.div<{ colors: typeof quina2 }>`
 .quina-bloco-estimativa {
     width: 240px;
     margin-left: 45px;
-    margin-top: 15px;
 }
 
 .quina-texto-estimativa {
     font-size: 15px;
-    color: #4c556c;
+    color: ${({ colors }) => colors.data};
+
 }
 
 .quina-valor-estimativa {
     font-size: 20px;
     margin-top: 15px;
     font-weight: bold;
-    color: #260085;
+    color: ${({ colors }) => colors.estimativa};
 }
 `;
